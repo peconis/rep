@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="Adresar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Osoba" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Kompanija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Osoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PunoIme" />
+        <xs:element ref="DatumRodjenja" />
+        <xs:element ref="Adresa" />
+        <xs:element ref="Telefon" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Email" />
+      </xs:sequence>
+      <xs:attribute name="osoba_id" type="xs:ID" use="required" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="PunoIme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ime">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[A-Z]([a-z]{2,29})"></xs:pattern>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="SrednjeIme" type="xs:string"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="Prezime" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  
+  <xs:element name="DatumRodjenja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Dan">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:minInclusive value="1"/>
+              <xs:maxInclusive value="31"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Mesec">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:minInclusive value="1"/>
+              <xs:maxInclusive value="12"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Godina" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+  <xs:element name="Adresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ulica" type="xs:string"/>
+        <xs:element name="Broj" type="xs:positiveInteger"/>
+        <xs:element name="Grad" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="Drzava" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute default="privremena" name="status">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="privremena" />
+            <xs:enumeration value="stalna" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="TelefonRestricted">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{3}/[0-9]{3}-[0-9]{3}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:element name="Telefon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="TelefonRestricted">
+          <xs:attribute name="tip" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="mobilni" />
+                <xs:enumeration value="fiksni" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="EmailRestricted">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-z]{1,20}@[0-9a-z]{4,8}.com"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:element name="Email">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="EmailRestricted">
+          <xs:attribute name="tip">
+            <xs:simpleType>
+              <xs:restriction base="xs:NMTOKEN">
+                <xs:enumeration value="privatni" />
+                <xs:enumeration value="sluzbeni" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Kompanija">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Naziv" type="xs:string"/>
+        <xs:element ref="Adresa" />
+        <xs:element ref="Telefon" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Email" />
+      </xs:sequence>
+      <xs:attribute name="kompanija_id" type="xs:ID" use="required" />
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>
