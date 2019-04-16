@@ -130,7 +130,8 @@
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
-  </xs:element>
+  </xs:element> 
+  
 
   <xs:element name="Kompanija">
     <xs:complexType>
