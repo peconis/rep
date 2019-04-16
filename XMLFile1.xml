@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Adresar SYSTEM "DTD.dtd">
+
+<Adresar>
+
+    <Osoba osoba_id="bg001">
+      <PunoIme>
+        <Ime>Petar</Ime>
+        <SrednjeIme></SrednjeIme>
+        <Prezime>Stajic</Prezime>
+      </PunoIme>
+      <DatumRodjenja>
+        <Dan>25</Dan>
+        <Mesec>8</Mesec>
+        <Godina>1991</Godina>
+      </DatumRodjenja>
+      <Adresa status="stalna" >
+        <Ulica>Save Kovacevica</Ulica>
+        <Broj>22</Broj>
+        <Grad>Beograd</Grad>
+        <Drzava>Srbija</Drzava>
+      </Adresa>
+      <Telefon tip="mobilni">064/228-414</Telefon>
+      <Email tip="privatni">petarstajic91@gmail.com</Email>
+    </Osoba>
+  
+  <Osoba osoba_id="bg002">
+    <PunoIme>
+      <Ime>Jovan</Ime>
+      <SrednjeIme>Nikola</SrednjeIme>
+      <Prezime>Milinkovic</Prezime>
+    </PunoIme>
+    <DatumRodjenja>
+      <Dan>25</Dan>
+      <Mesec>8</Mesec>
+      <Godina>1996</Godina>
+    </DatumRodjenja>
+    <Adresa status="stalna" >
+      <Ulica>Kralja Milana</Ulica>
+      <Broj>22</Broj>
+      <Grad>Beograd</Grad>
+    </Adresa>
+    <Telefon tip="mobilni">064/228-841</Telefon>
+    <Email tip="privatni">asdfasdf@gmail.com</Email>
+    <Email tip="privatni">poil@gmail.com</Email>
+    <Email tip="sluzbeni">r565@gmail.com</Email>
+  </Osoba>
+
+  <Osoba osoba_id="bg003">
+    <PunoIme>
+      <Ime>Marko</Ime>
+      <SrednjeIme>Mitrovic</SrednjeIme>
+      <Prezime>jovanovic</Prezime>
+    </PunoIme>
+    <DatumRodjenja>
+      <Dan>25</Dan>
+      <Mesec>3</Mesec>
+      <Godina>1999</Godina>
+    </DatumRodjenja>
+    <Adresa status="stalna" >
+      <Ulica>Kraljice Natalije</Ulica>
+      <Broj>22</Broj>
+      <Grad>Beograd</Grad>
+    </Adresa>
+    <Telefon tip="mobilni">064/445-841</Telefon>
+    <Email tip="privatni">gggh@gmail.com</Email>
+    <Email tip="privatni">lio@gmail.com</Email>
+    <Email tip="sluzbeni">nrt17116@gmail.com</Email>
+  </Osoba>
+  
+    <Kompanija kompanija_id="k001">
+      <Naziv>Tomopeks</Naziv>
+      <Adresa status="stalna">
+        <Ulica>Makenzijeva</Ulica>
+        <Broj>46</Broj>
+        <Grad>Beograd</Grad>
+        <Drzava>Srbija</Drzava>
+      </Adresa>
+      <Telefon tip="fiksni">011/401-656</Telefon>
+      <Email>tomopek@gmail.com</Email>
+    </Kompanija>
+ 
+    <Kompanija kompanija_id="k002">
+      <Naziv>Prevlad</Naziv>
+      <Adresa status="privremena">
+        <Ulica>Terazije</Ulica>
+        <Broj>23</Broj>
+        <Grad>Beograd</Grad>
+        <Drzava>Srbija</Drzava>
+      </Adresa>
+      <Telefon tip="fiksni">011/567-344</Telefon>
+      <Email tip="sluzbeni">info@prevlad.com</Email>
+      <Email tip="privatni">vlada@gmail.com</Email>
+    </Kompanija>
+
+  <Kompanija kompanija_id="k003">
+    <Naziv>Milka</Naziv>
+    <Adresa status="privremena">
+      <Ulica>Ratka Mitrovica</Ulica>
+      <Broj>23</Broj>
+      <Grad>Beograd</Grad>
+      <Drzava>Srbija</Drzava>
+    </Adresa>
+    <Telefon tip="fiksni">011/534-334</Telefon>
+    <Email tip="sluzbeni">info@milka.com</Email>
+    <Email tip="privatni">mile@gmail.com</Email>
+    <Email tip="privatni">mile1@gmail.com</Email>
+  </Kompanija>
+
+  
+  </Adresar>
