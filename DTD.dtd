@@ -16,6 +16,7 @@
   <!ELEMENT Telefon (#PCDATA)>
   <!ELEMENT Email (#PCDATA)>
   
+
   <!ELEMENT Kompanija (Naziv, Adresa, Telefon, Email+)>
   <!ELEMENT Naziv (#PCDATA)>
 
