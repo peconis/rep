@@ -1,0 +1,26 @@
+  <!ELEMENT Adresar (Osoba+,Kompanija+)>
+  <!ELEMENT Osoba (PunoIme, DatumRodjenja, Adresa, Telefon, Email+)>
+  <!ELEMENT PunoIme (Ime, SrednjeIme?, Prezime+)>
+  <!ELEMENT Ime (#PCDATA)>
+  <!ELEMENT SrednjeIme (#PCDATA)>
+  <!ELEMENT Prezime (#PCDATA)>
+  <!ELEMENT DatumRodjenja (Dan, Mesec, Godina)>
+  <!ELEMENT Dan (#PCDATA)>
+  <!ELEMENT Mesec (#PCDATA)>
+  <!ELEMENT Godina (#PCDATA)>
+  <!ELEMENT Adresa (Ulica, Broj, Grad, Drzava?)>
+  <!ELEMENT Ulica (#PCDATA)>
+  <!ELEMENT Broj (#PCDATA)>
+  <!ELEMENT Grad (#PCDATA)>
+  <!ELEMENT Drzava (#PCDATA)>
+  <!ELEMENT Telefon (#PCDATA)>
+  <!ELEMENT Email (#PCDATA)>
+  
+  <!ELEMENT Kompanija (Naziv, Adresa, Telefon, Email+)>
+  <!ELEMENT Naziv (#PCDATA)>
+
+  <!ATTLIST Osoba osoba_id ID #REQUIRED>
+  <!ATTLIST Kompanija kompanija_id ID #REQUIRED>
+  <!ATTLIST Adresa status (privremena|stalna) "privremena">
+  <!ATTLIST Telefon tip (mobilni|fiksni) #REQUIRED>
+  <!ATTLIST Email tip (privatni|sluzbeni) #IMPLIED>
